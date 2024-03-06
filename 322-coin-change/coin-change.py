@@ -31,12 +31,42 @@ class Solution:
             dp[i][amt] = min(take, nottake)
             return dp[i][amt]
 
+        def solveTab():
+            dp = [[0] * (amount + 1) for _ in range(n + 1)]
+
+            for i in range(amount + 1):
+                dp[n][i] = float("inf")
+
+            for i in range(n - 1, -1, -1):
+                for amt in range(amount + 1):
+                    if amt == 0:
+                        dp[i][amt] = 0
+                    else:
+                        take = float("inf")
+                        if amt - coins[i] >= 0:
+                            take = 1 + dp[i][amt - coins[i]]
+
+                        nottake = dp[i + 1][amt]
+
+                        dp[i][amt] = min(take, nottake)
+
+            return dp[0][amount]
+
+
+
+
+
+
 
 
         dp = [[-1] * (amount + 1) for _ in range(n)]
         ans = solve(0, amount)
 
+        ans=solveTab()
+
         if ans == float("inf"):
             return -1
         else:
             return ans
+
+
