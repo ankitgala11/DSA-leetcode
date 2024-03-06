@@ -59,8 +59,8 @@ class Solution:
 
 
 
-        dp = [[-1] * (amount + 1) for _ in range(n)]
-        ans = solve(0, amount)
+        # dp = [[-1] * (amount + 1) for _ in range(n)]
+        # ans = solve(0, amount)
 
         ans=solveTab()
 
