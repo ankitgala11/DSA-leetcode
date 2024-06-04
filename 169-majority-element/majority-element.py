@@ -12,7 +12,7 @@ class Solution:
             else:
                 cnt-=1
 
-            if cnt<0:
+            if cnt==0:
                 ans=nums[i]
                 cnt=1
 
