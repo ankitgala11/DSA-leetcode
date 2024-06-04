@@ -10,11 +10,13 @@ class Solution:
                 i+=1
                 j-=1
 
-        n=len(nums)-1
-        k=k%(n+1)
-        rev(0, n-k)
-        rev(n-k+1, n)
-        rev(0, n)
+        n=len(nums)
+
+        k=k%n
+
+        rev(0, n-k-1)
+        rev(n-k, n-1)
+        rev(0, n-1)
 
         
 
